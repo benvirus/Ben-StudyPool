@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>对象的属性描述</title>
+</head>
+<body>
+
+  <script type="text/javascript">
+    // 'use strict'
+    var obj = {
+        name:'ben',
+        age:18,
+        salary:50
+    }
+    Object.defineProperty(obj,'salary',{
+            value:1000000,
+            configurable:false,
+            writable:false,
+            enumerable:false
+        })
+    for(var key in obj){
+        console.log(key);
+    }
+
+
+
+  </script>
+  
+</body>
+</html>

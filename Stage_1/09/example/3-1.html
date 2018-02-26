@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>获取一张图片的一张方式</title>
+</head>
+<body>
+  <div id="imgBox">
+    
+  </div>
+
+  <script type="text/javascript">
+    imgSrc = './resource/test.jpg';
+
+    //DOM 操作
+    var imgBox = document.getElementById('imgBox');
+    var imgDom = document.createElement('img');
+    imgDom.src = imgSrc;
+    document.body.appendChild(imgDom);
+
+    //WebAPI 方法
+    // var img = new Image();
+    // img.src = imgSrc;
+    // document.body.appendChild(img);
+    
+    // Ajax 
+    // var xhr = new XMLHttpRequest();
+    // xhr.open('GET',imgSrc);
+    // xhr.onload = function(data){
+    //   console.log(data);
+    // }
+    // xhr.responseType='arraybuffer';
+    // xhr.send();
+
+
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>跨页面做"事件监听"</title>
+</head>
+<body>
+  <input id="check" type="checkbox" name="">同意<a id="readProtocal" href="./2-5_1.html" target="_blank">《＃＃＃协议》</a>
+
+  <script type="text/javascript">
+    var readProtocal = document.getElementById('readProtocal');
+    var checkbox = document.getElementById('check');
+    
+
+    readProtocal.onclick = function(){
+      localStorage.agree = '0';
+      var timer = null;
+      timer = setInterval(function(){
+        if(localStorage.agree=='1'){
+          check.checked = true;
+          alert('同意');
+          check.value = 1;
+          clearInterval(timer);
+        }else if(localStorage.agree == '-1'){
+          check.checked = false;
+          alert('不同意');
+          clearInterval(timer);
+        }
+      },500);
+    }
+  </script>
+</body>
+</html>

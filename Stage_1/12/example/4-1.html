@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>File</title>
+  <style type="text/css" media="screen">
+    .file-uploader{
+      padding: 20px;
+      position: relative;
+      cursor: pointer;
+    }
+    .file-uploader .file,.file-uploader .file-resetstyle{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      top: 0px;
+    }
+    .file-uploader .file-resetstyle{
+      color: #DDD;
+      color: red;
+    }
+    .file-uploader .file{
+      opacity: 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- 透明度的方法 -->
+  文件上传：
+  <div class="file-uploader">
+    <div class="file-resetstyle">
+      这里是下面一层表现
+    </div>
+    <input class="file" type="file" name="">
+  </div>
+  
+
+  <!-- label方法 -->
+  <label for="nihao">你好</label>
+  <input id="nihao" type="text">
+
+
+  <!-- file.click()方法 -->
+  <label for="fileselect">选择文件</label>
+  <input id="fileselect" type="file" hidden>
+
+
+  <!-- 本地文件上传加预览 -->
+  <img id="imgshow" src="" alt="">
+  <video id="videoshow" width="400px" src="" autoplay></video>
+  <input id="haha" type="file" hidden>
+  <a id="filehandler" href="javascript:;">选择文件</a>
+  <script type="text/javascript">
+      var filehandler = document.getElementById('filehandler');
+      var file = document.getElementById('haha');
+      var imgshow = document.getElementById('imgshow');
+      var videoshow = document.getElementById('videoshow');
+      var reader = new FileReader();
+
+      reader.onload = function(e){
+          var blob = new Blob([e.target.result],{type:'video/quicktime'});
+          videoshow.src = URL.createObjectURL(blob);
+          console.log(e);
+      }
+      reader.onprogress = function(e){
+          console.log(e.loaded/e.total*100+'%');
+      }
+
+      filehandler.onclick = function(e){
+          file.click();
+          e.preventDefault();
+      }
+      file.addEventListener('change',function(e){
+          reader.readAsArrayBuffer(this.files[0]);
+      });
+  </script>
+  
+</body>
+</html>

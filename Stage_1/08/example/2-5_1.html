@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>##协议</title>
+</head>
+<body>
+  <h2>这里是乱七八糟的协议啊啊啊啊啊啊啊啊啊啊</h2>
+  <p>#v发达v 分啊 v分啊    啊啊啊啊 啊啊v发v 人啊 v啊v 的啊 v发达发 不是把粉丝部分的身边 吧热杯杯恶个人厄全国热气氛打部分设备热情感染区打v </p>
+  <button id="agree" type="button">同意</button>
+  <button id="disagree" type="button">取消</button>
+
+  <script type="text/javascript">
+
+    var agree = document.getElementById('agree');
+    var disagree = document.getElementById('disagree');
+
+    agree.onclick=function(){
+      localStorage.agree = '1';
+      window.close();
+    }
+
+    disagree.onclick=function(){
+      localStorage.agree = '-1';
+      window.close();
+    }
+  </script>
+</body>
+</html>
+

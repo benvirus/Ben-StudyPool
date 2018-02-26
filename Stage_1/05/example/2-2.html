@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GUID</title>
+</head>
+<body>
+  <script type="text/javascript">
+    var newGUID = (function(){
+      var _guid = 0;
+      return function(){
+         return _guid++;
+      }
+    })()
+
+    console.log(newGUID());
+    console.log(newGUID());
+    console.log(newGUID());
+    
+  </script>
+</body>
+</html>

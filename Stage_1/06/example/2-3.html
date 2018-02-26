@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算图片实际尺寸</title>
+  <style type="text/css" media="screen">
+    .cropBox{
+      position: relative;
+    }
+    #croper{
+      position: absolute;
+      z-index: 10;
+      left: 0px;
+      top: 0px;
+      background: rgba(255,255,255,0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cropBox">
+    <img id="showImg" src="" alt="">
+    <div id="croper">
+      
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var showImg = {
+        src:'http://imgsrc.baidu.com/forum/pic/item/8713c8fcc3cec3fdfa631ae0d688d43f869427c2.jpg',
+        el:document.getElementById('showImg'),
+        croper:document.getElementById('croper'),
+        cropWidth:320,
+        cropHeight:180,
+        showCroper:function(){
+          this.croper.style.width = this.cropWidth+'px';
+          this.croper.style.height = this.cropHeight+'px';
+        },
+        show:function(){
+          this.el.width = this.scaledWidth;
+          this.el.height = this.scaledHeight;
+          this.el.src = this.src;
+        }
+    }
+  
+    function getNaturalDemention(){
+        var that = this;
+        var img = document.createElement('img');
+        img.src = this.src;
+        img.onload = function(){
+            if(this.naturalWidth){
+                that.naturalWidth = this.naturalWidth;
+                that.naturalHeight = this.naturalHeight;
+            }else{
+                var img = new Image(this);
+                img.src = this.src;
+                that.naturalWidth = img.width;
+                that.naturalHeight = img.height;
+            }
+            scaleImg.apply(that);
+            that.show();
+            that.showCroper();
+        }
+    }
+    
+    function scaleImg(){
+        var ratioWidht = this.cropWidth/this.naturalWidth;
+        var ratioHeight = this.cropHeight/this.naturalHeight;
+        var ratio = ratioWidht > ratioHeight ? ratioWidht :ratioHeight ;
+        this.scaledWidth = this.naturalWidth * ratio ;
+        this.scaledHeight = this.naturalHeight * ratio ;
+    }
+
+    getNaturalDemention.apply(showImg);
+
+  </script>
+</body>
+</html>

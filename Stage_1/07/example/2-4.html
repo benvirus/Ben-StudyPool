@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>词法作用域</title>
+</head>
+<body>
+  <script>
+    function A(){
+        var a = 3;
+        B();
+    }
+
+    function B(){
+        console.log(a);
+    }
+    
+    A();
+    var a = 2;
+  </script>
+</body>
+</html>

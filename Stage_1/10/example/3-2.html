@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New 关键词</title>
+</head>
+<body>
+  <script type="text/javascript">
+    
+    function Person(name,age){
+      this.name = name;
+      this.age = age;
+    }
+    var person = new Person('chen',25);
+    console.log(person);
+
+
+    var obj = Object.create(null);
+    obj.__proto__ = Person.prototype;
+    Person.call(obj,'chen',25);
+    console.log(obj.constructor);
+
+
+
+  </script>
+</body>
+</html>

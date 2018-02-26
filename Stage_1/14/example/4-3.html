@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>继承</title>
+</head>
+<body>
+  
+  <script type="text/javascript">
+    var Parent = {
+        init:function(){
+            this.name = 'ben';
+            this.age = 18;
+        },
+        getName:function(){
+            return this.name;
+        },
+        getAge:function(){
+            return this.age;
+        }
+    }
+
+    var Son = {
+        setup:function(salary){
+            this.init();
+            this.salary = salary;
+        },
+        getSalary:function(){
+            return this.salary;
+        }
+    }
+    Object.setPrototypeOf(Son,Parent);
+    
+    var son1 = Object.create(Son);
+    son1.setup(10);
+
+    var son2 = Object.create(Son);
+    son2.setup(40);
+
+    console.log(son1.getName());
+    console.log(son1.getSalary());
+    console.log(son1);
+    console.log(son2);
+
+
+
+
+
+  </script>
+</body>
+</html>

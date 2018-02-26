@@ -16,6 +16,7 @@
     + [✅ ] 13: [对象的属性描述](./Stage_1/13/README.md)。[Ben Chen]
     + [✅ ] 14: [不单单谈继承，还有怎么继承，和为什么能继承](./Stage_1/14/README.md)。[Ben Chen]
     + [✅ ] 15: [Event Order](./Stage_1/15/README.md)。[Ben Chen]
+    + [✅ ] 16: [对来自 Vue 源码的一段复杂正则表达式的分析](./Stage_1/16.md)。[Ben Chen]
 - 第二阶段：分之学习
     + [Nodejs](./Stage_2/Nodejs/README.md)
         * [✅ ] 01: [Nodejs闲谈](./Stage_2/Nodejs/01.md)。 [Ben Chen]
